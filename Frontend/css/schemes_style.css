@@ -1,0 +1,54 @@
+/* Apply flexbox for scheme container */
+.scheme_container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  justify-content: space-around;
+  gap: 20px;
+  padding: 1em 3em;
+}
+
+/* Styling each scheme (card) */
+.scheme_container .aos {
+  display: grid;
+  place-items: center;
+  grid-template-rows: 1fr 5% 25% auto;
+  gap: 2em;
+  padding: 20px;
+  box-shadow: 0px 0px 5px var(--menu_color);
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+  & p {
+    display: -webkit-box;
+    -webkit-line-clamp: 5; /* Number of lines */
+    -webkit-box-orient: vertical;
+    line-clamp: 5;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+/* Ensure images have the same size */
+.scheme_container .aos img {
+  display: block;
+  width: 30%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+/* Scheme card hover effect */
+.scheme_container .aos:hover {
+  transform: translateY(-10px);
+}
+
+/* Styling buttons */
+.scheme_container .aos button {
+  padding: 10px 20px;
+  background-color: var(--menu_color);
+  box-shadow: 0px 0px 5px var(--menu_color);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
